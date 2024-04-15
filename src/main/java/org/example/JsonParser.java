@@ -1,17 +1,13 @@
 package org.example;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.*;
-import java.io.FileReader;
-import java.io.IOException;
 
 public class JsonParser {
-    public boolean ContainsAsterisk(String filePath) {
+    public boolean ContainsAsterisk(String json) {
         Object obj = null;
 
         try {
-            obj = new JSONParser().parse(new FileReader(filePath));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+            obj = new JSONParser().parse(json);
         } catch (ParseException e) {
             throw new RuntimeException(e);
         }
